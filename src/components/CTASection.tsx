@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import lines from "@/assets/standinglogo.svg";
 
 const CTASection = () => {
   return (
-    <section className="py-24">
+    <section style={{ backgroundImage: `url(${lines})`,  zIndex:"0", backgroundSize: "contain", backgroundPosition: "right center",
+  backgroundRepeat: "no-repeat" }} className="py-24">
       <div className="container mx-auto px-4">
         <div className="relative rounded-2xl border border-border/50 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-primary/5" />

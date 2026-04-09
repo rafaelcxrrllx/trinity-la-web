@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import lines from "@/assets/lines.svg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section style={{ backgroundImage: `url(${lines})`,  zIndex:"10", backgroundSize: "contain",
+  backgroundRepeat: "no-repeat" }}  className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div  className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/8 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 text-center relative z-10">
@@ -20,9 +22,9 @@ const HeroSection = () => {
           <span className="gradient-text">Grows Your Business.</span>
         </h1>
 
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+        {/* <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-2 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.5s", color:"white", textShadow: "0 0 10px #000000;"}}>
           Trinity Los Angeles designs high-converting, modern websites for businesses ready to level up their online presence.
-        </p>
+        </p> */}
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in-up" style={{ animationDelay: "0.7s" }}>
           <Button variant="glow" size="lg" className="text-base px-8 py-6" asChild>
@@ -31,7 +33,7 @@ const HeroSection = () => {
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
           </Button>
-          <Button variant="glow-outline" size="lg" className="text-base px-8 py-6" asChild>
+          <Button variant="glow-outline" size="lg" className="text-base px-8 py-6" style={{backgroundColor: "black"}} asChild>
             <a href="#contact">Get a Free Website Audit</a>
           </Button>
         </div>
