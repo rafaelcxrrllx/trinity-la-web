@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/trinitylogo.svg";
+
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -17,6 +19,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <a href="#" className="text-xl font-bold tracking-tight">
+          <img  style={{ padding: '12px', display: "inline" }} src={logo} id="logo" alt="A blue Pegasus" width={75} height={75} />
           <span className="gradient-text">TRINITY</span>
           <span className="text-foreground/70 font-light ml-1">LA</span>
         </a>

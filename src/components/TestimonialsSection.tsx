@@ -40,7 +40,7 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        <p className="text-center text-muted-foreground text-sm mt-8">More testimonials coming soon.</p>
+        {/* <p className="text-center text-muted-foreground text-sm mt-8">More testimonials coming soon.</p> */}
       </div>
     </section>
   );

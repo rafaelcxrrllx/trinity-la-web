@@ -46,7 +46,7 @@ const ContactSection = () => {
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Mail className="w-4 h-4 text-primary" />
                 </div>
-                trinitylosangeles@gmail.com
+                rafaelcarrillo09@gmail.com
               </a>
             </div>
           </div>

@@ -9,7 +9,7 @@ const CTASection = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-primary/5" />
           <div className="relative z-10 text-center py-20 px-8">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Ready to <span className="gradient-text">Level Up?</span>
+              Ready to <span className="gradient-text">Start?</span>
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto mb-8">
               Let's build a website that turns visitors into customers. Book your free consultation today.
