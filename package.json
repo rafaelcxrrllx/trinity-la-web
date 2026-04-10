@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://trinitylosangeles.net/",
 
   "scripts": {
     "dev": "vite",
@@ -12,9 +11,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "test:watch": "vitest"
+   
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
