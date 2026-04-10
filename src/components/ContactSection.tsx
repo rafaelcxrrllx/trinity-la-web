@@ -13,11 +13,12 @@ const ContactSection = () => {
     e.preventDefault();
     setLoading(true);
 
-    const formData = new FormData(e.currentTarget);
-    // Add your Web3Forms Access Key here
-    formData.append("access_key", "7fae4e7d-86e9-44f2-bc0b-efc57a343747"); 
-
     try {
+      const formData = new FormData(e.currentTarget);
+      
+      // Make sure you replace YOUR_KEY_HERE with the actual key from Web3Forms
+      formData.append("access_key", "YOUR_KEY_HERE"); 
+
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
@@ -32,12 +33,13 @@ const ContactSection = () => {
         });
         (e.target as HTMLFormElement).reset();
       } else {
-        throw new Error("Something went wrong");
+        throw new Error("Submission failed");
       }
     } catch (error) {
+      console.error("Submission error:", error);
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again later.",
+        description: "Something went wrong. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -65,7 +67,7 @@ const ContactSection = () => {
                 </div>
                 (323) 675-7600
               </a>
-              <a href="mailto:trinitylosangeles@gmail.com" className="flex items-center gap-3 text-foreground/80 hover:text-primary transition-colors">
+              <a href="mailto:rafaelcarrillo09@gmail.com" className="flex items-center gap-3 text-foreground/80 hover:text-primary transition-colors">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Mail className="w-4 h-4 text-primary" />
                 </div>
@@ -100,7 +102,7 @@ const ContactSection = () => {
               rows={4}
               className="bg-secondary/50 border-border/50 focus:border-primary/50 resize-none"
             />
-            <Button variant="glow" className="w-full h-12" disabled={loading}>
+            <Button variant="default" className="w-full h-12" disabled={loading}>
               {loading ? "Sending..." : "Send Message"}
               <Send className="ml-2 w-4 h-4" />
             </Button>
