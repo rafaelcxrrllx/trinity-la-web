@@ -76,21 +76,25 @@ const ContactSection = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
+              name="name"
               placeholder="Your Name"
               required
               className="bg-secondary/50 border-border/50 focus:border-primary/50 h-12"
             />
             <Input
+              name="email"
               type="email"
               placeholder="Email Address"
               required
               className="bg-secondary/50 border-border/50 focus:border-primary/50 h-12"
             />
             <Input
+              name="business"
               placeholder="Business Name"
               className="bg-secondary/50 border-border/50 focus:border-primary/50 h-12"
             />
             <Textarea
+            name="message"
               placeholder="Tell us about your project..."
               required
               rows={4}
