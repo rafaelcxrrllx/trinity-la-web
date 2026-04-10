@@ -9,17 +9,40 @@ const ContactSection = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      toast({
-        title: "Message sent!",
-        description: "We'll get back to you within 24 hours.",
+
+    const formData = new FormData(e.currentTarget);
+    // Add your Web3Forms Access Key here
+    formData.append("access_key", "7fae4e7d-86e9-44f2-bc0b-efc57a343747"); 
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
       });
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "Message sent!",
+          description: "We'll get back to you within 24 hours.",
+        });
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error("Something went wrong");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -53,21 +76,28 @@ const ContactSection = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
+              name="name"
               placeholder="Your Name"
               required
               className="bg-secondary/50 border-border/50 focus:border-primary/50 h-12"
             />
             <Input
+              name="email"
               type="email"
               placeholder="Email Address"
               required
               className="bg-secondary/50 border-border/50 focus:border-primary/50 h-12"
             />
             <Input
-              placeholder="Business Name"
+              name="phone"
+              type="phone"
+              placeholder="Phone Number"
+              required
               className="bg-secondary/50 border-border/50 focus:border-primary/50 h-12"
             />
+           
             <Textarea
+            name="message"
               placeholder="Tell us about your project..."
               required
               rows={4}
