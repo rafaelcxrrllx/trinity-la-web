@@ -9,42 +9,17 @@ const ContactSection = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-
-    try {
-      const formData = new FormData(e.currentTarget);
-      
-      // Make sure you replace YOUR_KEY_HERE with the actual key from Web3Forms
-      formData.append("access_key", "YOUR_KEY_HERE"); 
-
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        toast({
-          title: "Message sent!",
-          description: "We'll get back to you within 24 hours.",
-        });
-        (e.target as HTMLFormElement).reset();
-      } else {
-        throw new Error("Submission failed");
-      }
-    } catch (error) {
-      console.error("Submission error:", error);
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
+    setTimeout(() => {
       setLoading(false);
-    }
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      (e.target as HTMLFormElement).reset();
+    }, 1000);
   };
 
   return (
@@ -67,7 +42,7 @@ const ContactSection = () => {
                 </div>
                 (323) 675-7600
               </a>
-              <a href="mailto:rafaelcarrillo09@gmail.com" className="flex items-center gap-3 text-foreground/80 hover:text-primary transition-colors">
+              <a href="mailto:trinitylosangeles@gmail.com" className="flex items-center gap-3 text-foreground/80 hover:text-primary transition-colors">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Mail className="w-4 h-4 text-primary" />
                 </div>
@@ -78,31 +53,27 @@ const ContactSection = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
-              name="name"
               placeholder="Your Name"
               required
               className="bg-secondary/50 border-border/50 focus:border-primary/50 h-12"
             />
             <Input
-              name="email"
               type="email"
               placeholder="Email Address"
               required
               className="bg-secondary/50 border-border/50 focus:border-primary/50 h-12"
             />
             <Input
-              name="business"
               placeholder="Business Name"
               className="bg-secondary/50 border-border/50 focus:border-primary/50 h-12"
             />
             <Textarea
-              name="message"
               placeholder="Tell us about your project..."
               required
               rows={4}
               className="bg-secondary/50 border-border/50 focus:border-primary/50 resize-none"
             />
-            <Button variant="default" className="w-full h-12" disabled={loading}>
+            <Button variant="glow" className="w-full h-12" disabled={loading}>
               {loading ? "Sending..." : "Send Message"}
               <Send className="ml-2 w-4 h-4" />
             </Button>
