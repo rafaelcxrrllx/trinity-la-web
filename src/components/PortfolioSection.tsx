@@ -6,9 +6,9 @@ import ppla from "@/assets/ppla.jpg";
 import { link } from "fs";
 
 const projects = [
-  { title: "Barrio Athletics", category: "E-Commerce / Branding", color: "from-primary/20 to-primary/5", image:ba, link:"https://barrioathletics.com/" },
-  { title: "Pain Psychologist LA", category: "Mental Health / Web Design", color: "from-primary/15 to-primary/5", image: ppla, link:"https://www.painpsychologistla.com/" },
-  { title: "Cargo Liner", category: "E-Commercer / Shopify", color: "from-primary/15 to-primary/5", image: cl, link:"https://cargoliner.com/" },
+  { title: "Barrio Athletics", category: "Athletic Brand / Branding", color: "from-primary/20 to-primary/5", image:ba, link:"https://barrioathletics.com/" },
+  { title: "Pain Psychologist LA", category: "Psychologist / Web Design", color: "from-primary/15 to-primary/5", image: ppla, link:"https://www.painpsychologistla.com/" },
+  { title: "Cargo Liner", category: " Online Pet Shop  / Shopify", color: "from-primary/15 to-primary/5", image: cl, link:"https://cargoliner.com/" },
 ];
 
 const PortfolioSection = () => {
