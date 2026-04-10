@@ -8,12 +8,12 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
+    base: './',
     port: 8080,
     hmr: {
       overlay: false,
     },
   },
-  base: './',
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
