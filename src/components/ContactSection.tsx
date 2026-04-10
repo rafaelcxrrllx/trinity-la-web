@@ -89,13 +89,6 @@ const ContactSection = () => {
               className="bg-secondary/50 border-border/50 focus:border-primary/50 h-12"
             />
             <Input
-              name="phone"
-              type="phone"
-              placeholder="Phone Number"
-              required
-              className="bg-secondary/50 border-border/50 focus:border-primary/50 h-12"
-            />
-            <Input
               name="business"
               placeholder="Business Name"
               className="bg-secondary/50 border-border/50 focus:border-primary/50 h-12"
