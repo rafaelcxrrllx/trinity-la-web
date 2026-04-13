@@ -11,12 +11,6 @@ const testimonials = [
     title: "Owner of Value Apparel",
     text: "Rafa, one of the best people to work alongside with, made the process of creating a well functioning website easy and fast. Very easy to work with, meets deadlines, and most importantly pays attention to every detail. Worked with Rafa before and definitely going to be working with him on any upcoming projects. 10/10 highly recommended.",
   },
-  {
-    name: "Nancy V.",
-    title: "Co-Founder of Cargo Liner",
-    text: "Rafael did a great job improving our website. He answered all our questions and guided us throughout the process. He improved our customers’ experience by making the website easier to navigate, more visible, and upgraded our Fit Finder along with updating product images, vehicle details, and more. He was very communicative and flexible with meetings. Overall, we highly recommend his services and look forward to working with him again in the future.",
-  
-  }
 ];
 
 const TestimonialsSection = () => {
