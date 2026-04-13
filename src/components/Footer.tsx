@@ -10,7 +10,7 @@ const Footer = () => {
           <span className="text-foreground/50 font-light ml-1">Trinity Los Angeles</span>
         </div>
         <p className="text-muted-foreground text-sm">
-          All Rights Reserved. Proverbs 21:31
+          All Rights Reserved. <a target="_blank" href="https://www.biblegateway.com/passage/?search=Proverbs%2021%3A31&version=KJV"> Proverbs 21:31 </a>
         </p>
       </div>
     </footer>
